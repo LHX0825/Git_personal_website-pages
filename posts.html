@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文章 · 星塵小站</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="posts">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><defs>
+<symbol id="ico-home" viewBox="0 0 24 24"><path d="M4 10l8-7 8 7v10a1 1 0 01-1 1H5a1 1 0 01-1-1V10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-article" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-people" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 16c1 .8 2 2 2 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="ico-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.8 1.2 6.9-6.2-3.3-6.2 3.3L7 14.1 2 9.3l6.9-1L12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-delete" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.9-8.9a5.5 5.5 0 000-7.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-palette" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.5 10a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM16.5 10a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM16.5 15a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="currentColor"/><circle cx="8.5" cy="14.5" r="1.5" fill="currentColor"/></symbol>
+<symbol id="ico-film" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 8h20M2 16h20" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="7" r="1" fill="currentColor"/><circle cx="8" cy="17" r="1" fill="currentColor"/><circle cx="16" cy="7" r="1" fill="currentColor"/><circle cx="16" cy="17" r="1" fill="currentColor"/></symbol>
+<symbol id="ico-think" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 10h.01M15 10h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 15c.8 1.3 2 2 3 2s2.2-.7 3-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-flight" viewBox="0 0 24 24"><path d="M22 2L12 6v5L2 8l4 4-4 4 10-3v5l-3 3 6-1 3 3 1-6 6 1-3-3 3-6-1 6-6-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-mood" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 14c.8 2 3 3 4 3s3.2-1 4-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 9h.01M15 9h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 7 10-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8v4a4 4 0 01-8 0V8a4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ico-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ico-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2V3zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7V3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-eat" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M6 8v13M6 8a4 4 0 014-4h.5a3.5 3.5 0 010 7H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 8h2M18 2v4M18 18v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8l-5-5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div class="noise"></div>
+<div class="aurora"><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div></div>
+<div class="stars" id="stars"></div>
+<div id="petals"></div>
+<div class="danmaku-layer" id="danmakuLayer"></div>
+<div class="wrap">
+<nav class="nav">
+  <a href="index.html" class="nav-logo" style="text-decoration:none"><svg class="ico"><use href="#ico-star"/></svg>STARDUST</a>
+  <div class="nav-links">
+    <a href="index.html" data-page="home"><svg class="ico"><use href="#ico-home"/></svg>首頁</a>
+    <a href="posts.html" data-page="posts"><svg class="ico"><use href="#ico-article"/></svg>文章</a>
+    <a href="chatters.html" data-page="chatters"><svg class="ico"><use href="#ico-chat"/></svg>說說</a>
+    <a href="friends.html" data-page="friends"><svg class="ico"><use href="#ico-people"/></svg>友鏈</a>
+    <a href="about.html" data-page="about"><svg class="ico"><use href="#ico-person"/></svg>關於</a>
+    <button class="theme-btn" id="themeBtn" title="主題切換"><svg class="ico"><use href="#ico-moon"/></svg></button>
+  </div>
+</nav>
+<h1 class="page-title"><svg class="ico"><use href="#ico-article"/></svg>文章列表</h1>
+<button class="pub-article-btn" onclick="openArticleForm()"><svg class="ico"><use href="#ico-send"/></svg>發表文章</button>
+
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center" 
+<div class="search-wrap"><svg class="ico search-icon" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--text2)"><use href="#ico-search"/></svg><input type="text" id="searchInput" placeholder="搜尋文章..." oninput="doSearch()"><button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center" id="tagFilter">
+  <button class="tag-btn sel" data-tag="all"><svg class="ico"><use href="#ico-star"/></svg>全部</button>
+  <button class="tag-btn" data-tag="tech"><svg class="ico"><use href="#ico-code"/></svg>技術</button>
+  <button class="tag-btn" data-tag="life"><svg class="ico"><use href="#ico-heart"/></svg>生活</button>
+  <button class="tag-btn" data-tag="anime"><svg class="ico"><use href="#ico-film"/></svg>動漫</button>
+  <button class="tag-btn" data-tag="design"><svg class="ico"><use href="#ico-palette"/></svg>設計</button>
+  <button class="tag-btn" data-tag="thought"><svg class="ico"><use href="#ico-think"/></svg>隨筆</button>
+  <button class="tag-btn" data-tag="travel"><svg class="ico"><use href="#ico-flight"/></svg>旅行</button>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-bottom:32px" id="postsGrid"></div>
+<footer class="footer"><p>Made with <span class="heart">💜</span> · 星塵小站 © 2024</p></footer>
+</div>
+
+</div>
+<!-- Article modal -->
+<div class="article-modal-overlay" id="articleModal">
+<div class="article-modal">
+<h2><svg class="ico"><use href="#ico-send"/></svg>發表文章</h2>
+<label>標題</label>
+<input type="text" id="artTitle" placeholder="輸入文章標題..." maxlength="100">
+<label>分類</label>
+<select id="artCat">
+<option value="tech">💻 技術</option>
+<option value="life">🌈 生活</option>
+<option value="anime">🎬 動漫</option>
+<option value="design">🎨 設計</option>
+<option value="thought">💭 隨筆</option>
+<option value="travel">✈️ 旅行</option>
+</select>
+<label>封面圖片（可選）</label>
+<div class="cover-upload-wrap">
+  <input type="text" id="artCover" placeholder="輸入圖片網址，或點下方上傳..." maxlength="500">
+  <label class="cover-file-btn" for="artCoverFile">
+    <svg class="ico"><use href="#ico-upload"/></svg> 選擇圖片
+    <input type="file" id="artCoverFile" accept="image/*" style="display:none" onchange="handleCoverUpload(this)">
+  </label>
+  <div class="cover-preview" id="coverPreview" style="display:none">
+    <img id="coverPreviewImg" style="max-width:200px;max-height:120px;border-radius:8px;margin-top:8px">
+    <button class="cover-rm-btn" onclick="removeCover()">✕</button>
+  </div>
+</div>
+<label>摘要</label>
+<textarea id="artExcerpt" placeholder="寫一段簡短摘要..." maxlength="200" style="min-height:80px"></textarea>
+<label>內容</label>
+<textarea id="artContent" placeholder="開始寫作..." maxlength="5000"></textarea>
+<div class="btn-row">
+<button class="btn-cancel" onclick="closeArticleForm()">取消</button>
+<button class="btn-submit" onclick="publishArticle()"><svg class="ico"><use href="#ico-send"/></svg>發表</button>
+</div>
+</div>
+</div>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var userPosts = (function() { try { return JSON.parse(localStorage.getItem("ff_articles") || "[]"); } catch(e) { return []; } })();
+var _artId = userPosts.length > 0 ? Math.max.apply(null, userPosts.map(function(p){return p.id})) + 1 : 100;
+function saveArticles() { 
+  try { localStorage.setItem("ff_articles", JSON.stringify(userPosts)); } 
+  catch(e) { 
+    if (e.name === "QuotaExceededError" || e.code === 22) {
+      alert("儲存空間不足！請使用較小的封面圖片或刪除一些文章。");
+    }
+  } 
+}
+function allPosts() { return userPosts.concat(builtinPosts); }
+var builtinPosts = [
+    { id:1, title:"2024 \u524d\u7aef\u6280\u8853\u8da8\u52e2\uff1aAI \u9a45\u52d5\u7684\u65b0\u7bc4\u5f0f", excerpt:"\u5f9e Vercel AI SDK \u5230 WebGPU\uff0cAI \u6df1\u5ea6\u878d\u5165\u4e86\u958b\u767c\u6d41\u7a0b\u3002\u804a\u804a\u6700\u8fd1\u534a\u5e74\u8e29\u904e\u7684\u5751\u8207\u6536\u7a6b\u3002", date:"2024-12-18", cat:"tech", tag:"\ud83d\udcbb \u6280\u8853", cc:"cat-tech", cv:"\ud83d\ude80", rt:"8 min" },
+    { id:2, title:"CSS \u52d5\u756b\u9b54\u6cd5\uff1a\u8b93\u4eba\u9a5a\u8277\u7684\u95dc\u9375\u5e40", excerpt:"@keyframes\u3001cubic-bezier\u3001will-change... \u8b93\u9801\u9762\u5f9e\u300c\u80fd\u7528\u300d\u8b8a\u6210\u300c\u9a5a\u8277\u300d\u3002", date:"2024-12-10", cat:"design", tag:"\ud83c\udfa8 \u8a2d\u8a08", cc:"cat-design", cv:"\u2728", rt:"6 min" },
+    { id:3, title:"\u6771\u4eac\u6f2b\u6b65\uff1a\u6d89\u8c37\u5230\u938c\u5009\u4e03\u65e5\u8a18", excerpt:"\u6c92\u6709\u8a08\u5283\u5c31\u662f\u6700\u597d\u7684\u8a08\u5283\u3002\u5728\u6771\u4eac\u8857\u982d\u96a8\u610f\u6f2b\u6b65\uff0c\u5403\u5230\u4e86\u6700\u597d\u5403\u7684\u62c9\u9eb5\u3002", date:"2024-11-25", cat:"travel", tag:"\u2708\ufe0f \u65c5\u884c", cc:"cat-travel", cv:"\ud83d\uddfe", rt:"12 min" },
+    { id:4, title:"\u56db\u6708\u65b0\u756a\u5fc5\u8ffd\uff1a\u9019\u5b63 5 \u90e8\u63a8\u85a6", excerpt:"\u5f9e\u6cbb\u7652\u65e5\u5e38\u5230\u786c\u6838\u79d1\u5e7b\uff0c\u56db\u6708\u65b0\u756a\u8cea\u91cf\u610f\u5916\u5730\u9ad8\u3002\u500b\u4eba\u5f37\u70c8\u63a8\u85a6\u7684\u4e94\u90e8\u3002", date:"2024-11-18", cat:"anime", tag:"\ud83c\udfac \u52d5\u6f2b", cc:"cat-anime", cv:"\ud83c\udf0c", rt:"5 min" },
+    { id:5, title:"Vim \u914d\u7f6e\u9032\u5316\u53f2\uff1a\u5f9e\u65b0\u624b\u5230\u719f\u7df4", excerpt:"\u56db\u5e74\u524d\u6253\u958b Vim \u4e0d\u77e5\u9053\u600e\u9ebc\u9000\u51fa\uff0c\u73fe\u5728\u5b83\u5df2\u662f\u552f\u4e00\u7684\u7de8\u8f2f\u5668\u3002\u5206\u4eab\u914d\u7f6e\u5fc3\u5f97\u3002", date:"2024-11-15", cat:"tech", tag:"\ud83d\udcbb \u6280\u8853", cc:"cat-tech", cv:"\u2328\ufe0f", rt:"10 min" },
+    { id:6, title:"\u95dc\u65bc\u7126\u616e\u548c\u81ea\u6211\u63a5\u7d0d\u7684\u788e\u788e\u5ff5", excerpt:"\u4e8c\u5341\u4e94\u6b72\u4e4b\u5f8c\u767c\u73fe\uff0c\u6210\u9577\u4e0d\u662f\u8b8a\u5f97\u66f4\u53b2\u5bb3\uff0c\u800c\u662f\u66f4\u63a5\u7d0d\u81ea\u5df1\u7684\u4e0d\u5b8c\u7f8e\u3002", date:"2024-11-02", cat:"thought", tag:"\ud83d\udcad \u96a8\u7b46", cc:"cat-thought", cv:"\ud83c\udf3f", rt:"4 min" },
+    { id:7, title:"\u7a0b\u5e8f\u54e1\u990a\u751f\u6307\u5357\uff1a\u8170\u690e\u5eb7\u5fa9\u4e4b\u8def", excerpt:"\u4e45\u5750\u662f\u6162\u6027\u81ea\u6bba\u3002\u4e09\u500b\u6708\u5eb7\u5fa9\u8a13\u7df4\u5f8c\uff0c\u7e3d\u7d50\u4e86\u9069\u5408\u7a0b\u5e8f\u54e1\u7684\u65e5\u5e38\u990a\u751f\u6e05\u55ae\u3002", date:"2024-10-20", cat:"life", tag:"\ud83c\udf08 \u751f\u6d3b", cc:"cat-life", cv:"\ud83e\uddd8", rt:"7 min" },
+    { id:8, title:"\u642d\u5efa\u52d5\u6f2b\u8ffd\u756a\u7ba1\u7406\u7cfb\u7d71", excerpt:"\u7528 Notion + API \u505a\u4e86\u8ffd\u756a\u7ba1\u7406\uff0c\u81ea\u52d5\u6293\u53d6\u65b0\u756a\u4fe1\u606f\u8a18\u9304\u89c0\u770b\u9032\u5ea6\u3002", date:"2024-10-08", cat:"anime", tag:"\ud83c\udfac \u52d5\u6f2b", cc:"cat-anime", cv:"\ud83d\udcfa", rt:"6 min" }
+  ];
+  var curTag = "all";
+  
+
+var coverDataUrl = "";
+window.handleCoverUpload = function(input) {
+  var file = input.files[0];
+  if (!file) return;
+  if (file.size > 3 * 1024 * 1024) { alert("圖片不能超過 3MB"); return; }
+  var preview = document.getElementById("coverPreview");
+  var previewImg = document.getElementById("coverPreviewImg");
+  preview.style.display = "block";
+  previewImg.src = "";
+  previewImg.style.opacity = "0.5";
+  
+  // Compress and convert to base64
+  var canvas = document.createElement("canvas");
+  var ctx = canvas.getContext("2d");
+  var img = new Image();
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    img.onload = function() {
+      var maxW = 600, maxH = 400;
+      var w = img.width, h = img.height;
+      if (w > maxW) { h = h * maxW / w; w = maxW; }
+      if (h > maxH) { w = w * maxH / h; h = maxH; }
+      canvas.width = w; canvas.height = h;
+      ctx.drawImage(img, 0, 0, w, h);
+      coverDataUrl = canvas.toDataURL("image/jpeg", 0.7);
+      previewImg.src = coverDataUrl;
+      previewImg.style.opacity = "1";
+      document.getElementById("artCover").value = "[已上傳]";
+      canvas.width = canvas.height = 0;
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+window.removeCover = function() {
+  coverDataUrl = "";
+  document.getElementById("coverPreview").style.display = "none";
+  document.getElementById("artCover").value = "";
+  document.getElementById("artCoverFile").value = "";
+}
+window.openArticleForm = function() { document.getElementById("articleModal").classList.add("open"); };
+window.closeArticleForm = function() { document.getElementById("articleModal").classList.remove("open"); };
+window.publishArticle = function() {
+  var title = document.getElementById("artTitle").value.trim();
+  var cover = coverDataUrl || document.getElementById("artCover").value.trim();
+  var cat = document.getElementById("artCat").value;
+  var excerpt = document.getElementById("artExcerpt").value.trim();
+  if (!title || !excerpt) return;
+  var catMap = { tech:{tag:"💻 技術", cc:"cat-tech", cv:"🚀"}, life:{tag:"🌈 生活", cc:"cat-life", cv:"🧘"}, anime:{tag:"🎬 動漫", cc:"cat-anime", cv:"🌌"}, design:{tag:"🎨 設計", cc:"cat-design", cv:"✨"}, thought:{tag:"💭 隨筆", cc:"cat-thought", cv:"🌿"}, travel:{tag:"✈️ 旅行", cc:"cat-travel", cv:"🗾"} };
+  var ci = catMap[cat];
+  var now = new Date();
+  var ds = now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2,"0") + "-" + String(now.getDate()).padStart(2,"0");
+  userPosts.unshift({ id: _artId++, title:title, cover:cover || null, excerpt:excerpt, date:ds, cat:cat, tag:ci.tag, cc:ci.cc, cv:ci.cv, rt:"剛剛發布", user:true });
+  saveArticles();
+  document.getElementById("artTitle").value = "";
+  coverDataUrl = "";
+  document.getElementById("coverPreview").style.display = "none";
+  document.getElementById("artCoverFile").value = "";
+  document.getElementById("artCover").value = "";
+  document.getElementById("artExcerpt").value = "";
+  document.getElementById("artContent").value = "";
+  closeArticleForm();
+  render();
+};
+window.deleteArticle = function(id) {
+  userPosts = userPosts.filter(function(p) { return p.id !== id; });
+  saveArticles();
+  render();
+};
+
+var searchTerm = "";
+window.doSearch = function() {
+  searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
+  var btn = document.getElementById("searchClear");
+  btn.style.display = searchTerm ? "block" : "none";
+  if (searchTerm) { document.querySelectorAll(".tag-btn").forEach(function(t) { t.classList.remove("sel"); }); document.querySelector('.tag-btn[data-tag="all"]').classList.add("sel"); curTag = "all"; }
+  render();
+}
+window.clearSearch = function() { document.getElementById("searchInput").value = ""; doSearch(); }
+function render() {
+    var f = allPosts().filter(function(p) { return (curTag === "all" || p.cat === curTag) && (!searchTerm || p.title.toLowerCase().indexOf(searchTerm) !== -1 || p.excerpt.toLowerCase().indexOf(searchTerm) !== -1); });
+    document.getElementById("postsGrid").innerHTML = f.map(function(p) {
+      return '<a href="article.html?id=' + p.id + '" style="text-decoration:none;color:inherit"><div class="card"' + (p.user?' user-article':'') + '><div class="card-cover"' + (p.cover ? ' style="background-image:url(' + p.cover + ');background-size:cover;background-position:center"' : '') + '>' + (p.cover ? '' : p.cv) + '</div><div class="card-body"><div class="card-meta"><span class="card-cat ' + p.cc + '">' + p.tag + '</span><span>\ud83d\udcc5 ' + p.date + '</span></div><div class="card-title">' + p.title + '</div><div class="card-excerpt">' + p.excerpt + '</div><div class="card-footer"><span>' + p.rt + ' 閱讀</span>' + (p.user ? '<button class="pub-art-delete" onclick="event.stopPropagation();event.preventDefault();deleteArticle('+p.id+')" title="刪除"><svg class="ico"><use href="#ico-delete"/></svg></button>' : '') + '<span class="card-more">閱讀更多 <svg class="ico"><use href="#ico-arrow"/></svg></span></div></div></div></a>';
+    }).join("");
+  }
+  document.getElementById("tagFilter").addEventListener("click", function(e) {
+    var btn = e.target.closest(".tag-btn");
+    if (btn) { document.querySelectorAll(".tag-btn").forEach(function(t) { t.classList.remove("sel"); }); btn.classList.add("sel"); curTag = btn.dataset.tag; render(); }
+  });
+  render();
+});
+</script>
+
+<!-- Music Player -->
+<button class="music-toggle" id="musicToggle" title="音樂播放器" onclick="toggleMusic()"><svg class="ico" style="width:1.3em;height:1.3em"><use href="#ico-music"/></svg></button>
+<div class="music-panel" id="musicPanel">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="https://music.163.com/outchain/player?type=2&id=1930226368&auto=0&height=66" id="musicIframe"></iframe>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:"smooth"})" title="回到頂部"><svg class="ico"><use href="#ico-arrow" style="transform:rotate(-90deg)"/></svg></button>
+</body>
+</html>

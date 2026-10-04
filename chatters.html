@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>說說 · 星塵小站</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="chatters">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><defs>
+<symbol id="ico-home" viewBox="0 0 24 24"><path d="M4 10l8-7 8 7v10a1 1 0 01-1 1H5a1 1 0 01-1-1V10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-article" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-people" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 16c1 .8 2 2 2 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="ico-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.8 1.2 6.9-6.2-3.3-6.2 3.3L7 14.1 2 9.3l6.9-1L12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-delete" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.9-8.9a5.5 5.5 0 000-7.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-palette" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.5 10a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM16.5 10a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM16.5 15a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="currentColor"/><circle cx="8.5" cy="14.5" r="1.5" fill="currentColor"/></symbol>
+<symbol id="ico-film" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 8h20M2 16h20" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="7" r="1" fill="currentColor"/><circle cx="8" cy="17" r="1" fill="currentColor"/><circle cx="16" cy="7" r="1" fill="currentColor"/><circle cx="16" cy="17" r="1" fill="currentColor"/></symbol>
+<symbol id="ico-think" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 10h.01M15 10h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 15c.8 1.3 2 2 3 2s2.2-.7 3-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-flight" viewBox="0 0 24 24"><path d="M22 2L12 6v5L2 8l4 4-4 4 10-3v5l-3 3 6-1 3 3 1-6 6 1-3-3 3-6-1 6-6-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-mood" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 14c.8 2 3 3 4 3s3.2-1 4-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 9h.01M15 9h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 7 10-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8v4a4 4 0 01-8 0V8a4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ico-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ico-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2V3zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7V3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-eat" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M6 8v13M6 8a4 4 0 014-4h.5a3.5 3.5 0 010 7H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 8h2M18 2v4M18 18v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div class="noise"></div>
+<div class="aurora"><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div></div>
+<div class="stars" id="stars"></div>
+<div id="petals"></div>
+<div class="danmaku-layer" id="danmakuLayer"></div>
+<div class="wrap">
+<nav class="nav">
+  <a href="index.html" class="nav-logo" style="text-decoration:none"><svg class="ico"><use href="#ico-star"/></svg>STARDUST</a>
+  <div class="nav-links">
+    <a href="index.html" data-page="home"><svg class="ico"><use href="#ico-home"/></svg>首頁</a>
+    <a href="posts.html" data-page="posts"><svg class="ico"><use href="#ico-article"/></svg>文章</a>
+    <a href="chatters.html" data-page="chatters"><svg class="ico"><use href="#ico-chat"/></svg>說說</a>
+    <a href="friends.html" data-page="friends"><svg class="ico"><use href="#ico-people"/></svg>友鏈</a>
+    <a href="about.html" data-page="about"><svg class="ico"><use href="#ico-person"/></svg>關於</a>
+    <button class="theme-btn" id="themeBtn" title="主題切換"><svg class="ico"><use href="#ico-moon"/></svg></button>
+  </div>
+</nav>
+<style>
+.publish-box{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;backdrop-filter:blur(16px);margin-bottom:24px;max-width:700px;margin-left:auto;margin-right:auto}
+.publish-box textarea{width:100%;min-height:80px;padding:14px 18px;border-radius:var(--r2);border:1px solid var(--bdr);background:var(--surf-h);color:var(--text);font-family:inherit;font-size:0.9em;resize:vertical;outline:none;transition:all var(--t);margin-bottom:12px}
+.publish-box textarea:focus{border-color:var(--c1);box-shadow:0 0 0 3px rgba(124,58,237,0.1)}
+.pub-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pub-cats{display:flex;gap:6px;flex-wrap:wrap}
+.pub-cat{padding:6px 16px;border-radius:16px;border:1px solid var(--bdr);background:var(--surf);color:var(--text2);font-size:0.8em;cursor:pointer;font-family:inherit;transition:all var(--t);display:flex;align-items:center;gap:5px}
+.pub-cat:hover,.pub-cat.sel{background:linear-gradient(135deg,var(--c1),var(--c2));border-color:transparent;color:#fff}
+.pub-btn{padding:10px 28px;border-radius:20px;border:none;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;font-family:inherit;font-size:0.88em;font-weight:600;cursor:pointer;transition:all var(--t);margin-left:auto;box-shadow:0 4px 16px rgba(124,58,237,0.25);display:flex;align-items:center;gap:6px}
+.pub-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,58,237,0.4)}
+.pub-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+.del-btn{background:none;border:none;color:var(--text2);cursor:pointer;font-size:0.9em;padding:4px 8px;border-radius:8px;transition:all var(--t);opacity:0;margin-left:auto;display:flex;align-items:center}
+.chat-item:hover .del-btn{opacity:1}
+.del-btn:hover{color:#f87171;background:rgba(248,113,113,0.1)}
+</style>
+<h1 class="page-title"><svg class="ico"><use href="#ico-chat"/></svg>說說</h1>
+<div class="publish-box">
+  <textarea id="chatterInput" placeholder='分享此刻的想法...' maxlength="200"></textarea>
+  <div class="pub-row">
+    <div class="pub-cats" id="pubCats">
+      <button class="pub-cat sel" data-tag="\ud83d\udcac"><svg class="ico"><use href="#ico-chat"/></svg>日常</button>
+      <button class="pub-cat" data-tag="\ud83d\udcbb"><svg class="ico"><use href="#ico-code"/></svg>技術</button>
+      <button class="pub-cat" data-tag="\ud83c\udfac"><svg class="ico"><use href="#ico-film"/></svg>動漫</button>
+      <button class="pub-cat" data-tag="\ud83c\udfb5"><svg class="ico"><use href="#ico-music"/></svg>音樂</button>
+      <button class="pub-cat" data-tag="\ud83d\udcd6"><svg class="ico"><use href="#ico-book"/></svg>閱讀</button>
+      <button class="pub-cat" data-tag="\ud83c\udf5c"><svg class="ico"><use href="#ico-eat"/></svg>美食</button>
+      <button class="pub-cat" data-tag="\u2708\ufe0f"><svg class="ico"><use href="#ico-flight"/></svg>旅行</button>
+    </div>
+    <span style="font-size:0.74em;color:var(--text2)" id="charCount">0/200</span>
+    <button class="pub-btn" id="pubBtn" disabled><svg class="ico"><use href="#ico-send"/></svg>發表</button>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;max-width:700px;margin:0 auto 40px" id="chattersList"></div>
+<footer class="footer"><p>Made with <span class="heart">💜</span> · 星塵小站 © 2024</p></footer>
+</div>
+<script src="app.js"></script>
+<script>
+(function() {
+  var stored = localStorage.getItem("ff_chats");
+  var chatters = stored ? JSON.parse(stored) : [
+    { name:'星塵', av:'\ud83c\udf0c', text:'優化了部落格的回應式佈局，手機端體驗大幅提升 \u2728', tag:'\ud83d\udcbb', time:'2 天前' },
+    { name:'星塵', av:'\ud83c\udfb8', text:'新番《椎名林檎》意外好看，作畫和配樂絕了', tag:'\ud83c\udfac', time:'5 天前' },
+    { name:'星塵', av:'\ud83d\udcbb', text:'GitHub Actions 自動化部署踩坑，折騰了一下午', tag:'\ud83d\udcbb', time:'1 週前' },
+    { name:'星塵', av:'\ud83d\udda5', text:'換了新顯示器，4K 144Hz，寫代碼像在看藝術品 \ud83d\ude2d', tag:'\ud83d\udcbb', time:'2 週前' },
+    { name:'星塵', av:'\ud83d\udecd', text:'週末去秋葉原搬回一堆手辦，錢包在哭泣', tag:'\ud83c\udf5c', time:'3 週前' }
+  ];
+  var pubTag = "\ud83d\udcac";
+
+  function save() { 
+    try { localStorage.setItem("ff_chats", JSON.stringify(chatters)); } catch(e) {} 
+  }
+  function render() {
+    var list = document.getElementById("chattersList");
+    if (!list) return;
+    list.innerHTML = chatters.map(function(c, i) {
+      return '<div class="chat-item"><div class="chat-av">' + c.av + '</div><div style="flex:1"><div class="chat-name">' + c.name + ' <span style="font-size:0.72em;color:var(--c1)">' + c.tag + '</span></div><div class="chat-text">' + c.text + '</div><div class="chat-time">' + c.time + '</div></div><button class="del-btn" onclick="rm(' + i + ')" title="刪除"><svg class="ico"><use href="#ico-delete"/></svg></button></div>';
+    }).join("");
+  }
+  
+  window.rm = function(i) { chatters.splice(i, 1); save(); render(); };
+  
+  var catsEl = document.getElementById("pubCats");
+  if (catsEl) {
+    catsEl.addEventListener("click", function(e) {
+      var btn = e.target.closest(".pub-cat");
+      if (btn) { 
+        document.querySelectorAll(".pub-cat").forEach(function(b) { b.classList.remove("sel"); }); 
+        btn.classList.add("sel"); 
+        pubTag = btn.dataset.tag; 
+      }
+    });
+  }
+  
+  var input = document.getElementById("chatterInput");
+  var count = document.getElementById("charCount");
+  var btn = document.getElementById("pubBtn");
+  
+  if (input && btn && count) {
+    input.addEventListener("input", function() { 
+      var len = input.value.trim().length; 
+      count.textContent = len + "/200"; 
+      btn.disabled = len === 0; 
+    });
+    
+    btn.addEventListener("click", function() {
+      var text = input.value.trim(); 
+      if (!text) return;
+      chatters.unshift({ name:'星塵', av:pubTag, text:text, tag:pubTag, time:'剛剛' });
+      input.value = ""; 
+      count.textContent = "0/200"; 
+      btn.disabled = true;
+      save(); 
+      render();
+    });
+    
+    input.addEventListener("keydown", function(e) { 
+      if (e.key === "Enter" && !e.shiftKey) { 
+        e.preventDefault(); 
+        if (!btn.disabled) btn.click(); 
+      } 
+    });
+  }
+  
+  render();
+})();
+</script>
+
+<!-- Music Player -->
+<button class="music-toggle" id="musicToggle" title="音樂播放器" onclick="toggleMusic()"><svg class="ico" style="width:1.3em;height:1.3em"><use href="#ico-music"/></svg></button>
+<div class="music-panel" id="musicPanel">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="https://music.163.com/outchain/player?type=2&id=1930226368&auto=0&height=66" id="musicIframe"></iframe>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:"smooth"})" title="回到頂部"><svg class="ico"><use href="#ico-arrow" style="transform:rotate(-90deg)"/></svg></button>
+</body>
+</html>

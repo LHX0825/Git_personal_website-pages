@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文章 · 星塵小站</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.article-page{max-width:780px;margin:0 auto;padding:0 20px 60px}
+.article-page .article-header{margin-bottom:40px;text-align:center}
+.article-page .article-cat{display:inline-block;padding:6px 18px;border-radius:14px;font-size:0.85em;font-weight:600;margin-bottom:16px;letter-spacing:0.5px}
+.article-page .article-title{font-family:"Space Grotesk",sans-serif;font-size:2.2em;font-weight:900;line-height:1.35;color:var(--text);margin-bottom:16px;letter-spacing:0.5px}
+.article-page .article-date{color:var(--text2);font-size:0.9em;font-family:"Space Grotesk",sans-serif;letter-spacing:1px}
+.article-page .article-content{font-size:1.08em;line-height:2;color:var(--text);white-space:pre-wrap;word-break:break-word}
+.article-page .article-content p{margin-bottom:1.2em}
+.article-page .article-content h2{font-size:1.4em;margin:1.6em 0 0.8em;color:var(--c1)}
+.article-page .article-content h3{font-size:1.15em;margin:1.2em 0 0.6em}
+.article-page .article-content blockquote{border-left:3px solid var(--c1);padding:8px 20px;margin:1em 0;color:var(--text2);background:var(--surf);border-radius:0 var(--r2) var(--r2) 0}
+.article-page .article-content code{background:var(--surf);padding:2px 8px;border-radius:6px;font-size:0.9em}
+.article-page .article-content pre{background:rgba(0,0,0,0.3);padding:20px;border-radius:var(--r2);overflow-x:auto;margin:1em 0;line-height:1.6}
+.article-page .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--c1);text-decoration:none;font-family:"Space Grotesk",sans-serif;font-size:0.9em;font-weight:600;margin:32px 0 0;transition:all var(--t)}
+.article-page .back-link:hover{gap:14px}
+.article-notfound{text-align:center;padding:100px 20px;color:var(--text2)}
+.article-notfound h3{font-size:1.5em;color:var(--text);margin-bottom:12px}
+.article-notfound a{color:var(--c1);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body data-page="posts">
+<div class="read-progress" id="readProgress"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><defs>
+<symbol id="ico-home" viewBox="0 0 24 24"><path d="M4 10l8-7 8 7v10a1 1 0 01-1 1H5a1 1 0 01-1-1V10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-article" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-people" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 16c1 .8 2 2 2 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="ico-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.8 1.2 6.9-6.2-3.3-6.2 3.3L7 14.1 2 9.3l6.9-1L12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-delete" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ico-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ico-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ico-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.9-8.9a5.5 5.5 0 000-7.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ico-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div class="noise"></div>
+<div class="aurora"><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div></div>
+<div class="stars" id="stars"></div>
+<div id="petals"></div>
+<div class="danmaku-layer" id="danmakuLayer"></div>
+<div class="wrap">
+<nav class="nav">
+  <a href="index.html" class="nav-logo" style="text-decoration:none"><svg class="ico"><use href="#ico-star"/></svg>STARDUST</a>
+  <div class="nav-links">
+    <a href="index.html"><svg class="ico"><use href="#ico-home"/></svg>首頁</a>
+    <a href="posts.html" class="active"><svg class="ico"><use href="#ico-article"/></svg>文章</a>
+    <a href="chatters.html"><svg class="ico"><use href="#ico-chat"/></svg>說說</a>
+    <a href="friends.html"><svg class="ico"><use href="#ico-people"/></svg>友鏈</a>
+    <a href="about.html"><svg class="ico"><use href="#ico-person"/></svg>關於</a>
+    <button class="theme-btn" id="themeBtn" title="主題切換"><svg class="ico"><use href="#ico-moon"/></svg></button>
+  </div>
+</nav>
+<div class="article-page" id="articlePage"></div>
+<footer class="footer"><p>Made with <span class="heart">💜</span> · 星塵小站 © 2024</p></footer>
+</div>
+<button class="music-toggle" id="musicToggle" title="音樂播放器" onclick="toggleMusic()"><svg class="ico" style="width:1.3em;height:1.3em"><use href="#ico-music"/></svg></button>
+<div class="music-panel" id="musicPanel">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="https://music.163.com/outchain/player?type=2&id=1930226368&auto=0&height=66"></iframe>
+</div>
+
+<script src="app.js"></script>
+<script>
+(function() {
+  var id = parseInt(new URLSearchParams(window.location.search).get("id")) || 0;
+  var userPosts = JSON.parse(localStorage.getItem("ff_articles") || "[]");
+  var builtin = [
+{id:1,title:"2024 前端技術趨勢：AI 驅動的新範式",content:"從 Vercel AI SDK 到 WebGPU，AI 深度融入了開發流程。聊聊最近半年踩過的坑與收穫。\n\n## AI 驅動開發\n\n這一年最大的變化無疑是 AI。GitHub Copilot 已經從「偶爾有用」變成「日常必備」。Cursor 更進一步，把整個 IDE 變成了一個對話界面。\n\n## WebGPU 來了\n\nChrome 113 正式啟用 WebGPU，瀏覽器端高效能計算不再是一個夢想。我們測試了幾個場景：\n\n- 圖片處理比 WebGL 快 3-5 倍\n- 機器學習推理可以完全在瀏覽器端進行\n- 遊戲渲染的幀率提升明顯\n\n## 框架之爭\n\nReact Server Components 穩定後，整個生態在重構。Next.js App Router、Remix、Astro...選擇比以往更多。我的建議是：不要追新，選最適合團隊的。\n\n> 「工具是手段，產品才是目的。」\n\n## 總結\n\n2024 是充滿變化的一年，但核心能力永遠不變：思考、設計、解決問題。",excerpt:"從 Vercel AI SDK 到 WebGPU，AI 深度融入了開發流程。聊聊最近半年踩過的坑與收穫。",date:"2024-12-18",cat:"tech",tag:"💻 技術",cc:"cat-tech",cv:"🚀",rt:"8 min"},
+{id:2,title:"CSS 動畫魔法：讓人驚豔的關鍵幀",content:"@keyframes、cubic-bezier、will-change... 讓頁面從「能用」變成「驚豔」。\n\n## 基礎動畫\n\n```css\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n```\n\n## 進階技巧\n\n使用 cubic-bezier 可以創造出自然的緩動效果。我最常用的幾個：\n\n- `cubic-bezier(0.22, 0.61, 0.36, 1)` - 自然的彈出\n- `cubic-bezier(0.4, 0, 0.2, 1)` - Material Design 標準\n\n## 效能優化\n\n- 只用 `transform` 和 `opacity` 做動畫\n- 永遠記得加 `will-change` 提示瀏覽器\n- 避免在動畫中改變 layout 屬性",excerpt:"@keyframes、cubic-bezier、will-change... 讓頁面從「能用」變成「驚豔」。",date:"2024-12-10",cat:"design",tag:"🎨 設計",cc:"cat-design",cv:"✨",rt:"6 min"},
+{id:3,title:"東京漫步：涉谷到鎌倉七日記",content:"沒有計劃就是最好的計劃。在東京街頭隨意漫步，吃到了最好吃的拉麵。\n\n## Day 1-2: 涉谷 & 原宿\n\n落地後直接去了涉谷。那個十字路口真的和電影裡一樣震撼。原宿的竹下通讓錢包哭泣。\n\n## Day 3-4: 鎌倉\n\n搭江之電去鎌倉。高校前站的那個平交道，灌籃高手的經典場景。海風吹得很舒服。\n\n## Day 5-7: 秋葉原 & 淺草\n\n秋葉原的電器街和動漫店逛了一整天。淺草的雷門和仲見世通充滿了江戶風情。\n\n> 旅行最大的收穫不是去了哪裡，而是回來之後看世界的角度不同了。",excerpt:"沒有計劃就是最好的計劃。在東京街頭隨意漫步，吃到了最好吃的拉麵。",date:"2024-11-25",cat:"travel",tag:"✈️ 旅行",cc:"cat-travel",cv:"🗾",rt:"12 min"},
+{id:4,title:"四月新番必追：這季 5 部推薦",content:"從治癒日常到硬核科幻，四月新番質量意外地高。個人強烈推薦的五部。\n\n## 1. 椎名林檎\n\n原創動畫，作畫精美到每一幀都可以截圖當桌布。音樂由梶浦由記操刀，絕了。\n\n## 2. 星辰坠落\n\n科幻題材，世界觀設定很紮實。前三集的節奏把握得很好。\n\n## 3-5. 其他推薦\n\n還有幾部日常番和戀愛喜劇也不錯，週末一口氣補完很過癮。",excerpt:"從治癒日常到硬核科幻，四月新番質量意外地高。個人強烈推薦的五部。",date:"2024-11-18",cat:"anime",tag:"🎬 動漫",cc:"cat-anime",cv:"🌌",rt:"5 min"},
+{id:5,title:"Vim 配置進化史：從新手到熟練",content:"四年前打開 Vim 不知道怎麼退出，現在它已是唯一的編輯器。分享配置心得。\n\n## 起步\n\n```vim\n\" 關掉方向鍵，強迫自己用 hjkl\nnoremap <Up> <Nop>\nnoremap <Down> <Nop>\nnoremap <Left> <Nop>\nnoremap <Right> <Nop>\n```\n\n## 插件生態\n\n從 vim-plug 到 lazy.nvim，插件管理越來越方便。必裝的幾個：\n\n- Telescope - 模糊搜尋\n- Treesitter - 語法高亮\n- LSP - 程式補全\n- Harpoon - 快速跳轉\n\n## 效率提升\n\n熟練之後，編輯速度確實比滑鼠快很多。但最重要的是：不用離開鍵盤的沉浸感。",excerpt:"四年前打開 Vim 不知道怎麼退出，現在它已是唯一的編輯器。分享配置心得。",date:"2024-11-15",cat:"tech",tag:"💻 技術",cc:"cat-tech",cv:"⌨️",rt:"10 min"},
+{id:6,title:"關於焦慮和自我接納的碎碎念",content:"二十五歲之後發現，成長不是變得更厲害，而是更接納自己的不完美。\n\n## 焦慮的來源\n\n社群媒體讓我們看到太多「別人的成功」。但每個人都有自己的節奏。\n\n## 接納不完美\n\n承認自己做不到，反而是一種力量。不需要每次都做到最好。\n\n> 完美是完成的敵人。\n\n## 一些小建議\n\n1. 每天寫下三件感恩的事\n2. 減少社交媒體使用時間\n3. 適度運動，哪怕是散步\n4. 允許自己有「什麼都不想做」的日子",excerpt:"二十五歲之後發現，成長不是變得更厲害，而是更接納自己的不完美。",date:"2024-11-02",cat:"thought",tag:"💭 隨筆",cc:"cat-thought",cv:"🌿",rt:"4 min"},
+{id:7,title:"程序員養生指南：腰椎康復之路",content:"久坐是慢性自殺。三個月康復訓練後，總結了適合程序員的日常養生清單。\n\n## 問題診斷\n\n腰 L4-L5 椎間盤突出，坐超過一小時就痛。醫生說：再不注意就要手術了。\n\n## 康復計劃\n\n### 每日必做\n\n1. 貓牛式 - 10 次\n2. 鳥狗式 - 每邊 30 秒\n3. 橋式 - 15 次\n4. 死蟲式 - 20 次\n\n### 工作習慣\n\n- 番茄鐘：25 分鐘工作 + 5 分鐘伸展\n- 升降桌：站坐交替\n- 螢幕高度：視線平行於螢幕上緣\n\n## 三個月後\n\n痛感從 8 分降到 2 分。最重要的是養成了習慣。程式碼可以重寫，身體只有一個。",excerpt:"久坐是慢性自殺。三個月康復訓練後，總結了適合程序員的日常養生清單。",date:"2024-10-20",cat:"life",tag:"🌈 生活",cc:"cat-life",cv:"🧘",rt:"7 min"},
+{id:8,title:"搭建動漫追番管理系統",content:"用 Notion + API 做了追番管理，自動抓取新番信息記錄觀看進度。\n\n## 架構\n\n- Notion 作為數據庫\n- Python 腳本定時抓取番劇信息\n- GitHub Actions 自動運行\n\n## 功能\n\n- 自動標記更新日期\n- 觀看進度追蹤\n- 評分系統\n- 推薦算法\n\n有興趣的話可以去 GitHub 看源碼。",excerpt:"用 Notion + API 做了追番管理，自動抓取新番信息記錄觀看進度。",date:"2024-10-08",cat:"anime",tag:"🎬 動漫",cc:"cat-anime",cv:"📺",rt:"6 min"}
+  ];
+  var all = userPosts.concat(builtin);
+  var article = all.find(function(p) { return p.id === id; });
+  var container = document.getElementById("articlePage");
+  
+  if (!article) {
+    if (article.cover) { document.getElementById('artCoverImg').style.display = 'block'; document.getElementById('artCoverImg').style.backgroundImage = 'url(' + article.cover + ')'; }
+  container.innerHTML = '<div class="article-notfound"><h3>🫧 找不到這篇文章</h3><p>可能已被刪除或連結無效</p><a href="posts.html" style="margin-top:16px;display:inline-block"><svg class="ico"><use href="#ico-arrow"/></svg> 回到文章列表</a> <button class="share-btn" onclick="copyArticleLink()" style="margin-left:16px"><svg class="ico"><use href="#ico-link"/></svg>複製連結</button></div>';
+    return;
+  }
+  
+  document.title = article.title + " · 星塵小站";
+  if (article.cover) { document.getElementById('artCoverImg').style.display = 'block'; document.getElementById('artCoverImg').style.backgroundImage = 'url(' + article.cover + ')'; }
+  container.innerHTML = 
+    '<div class="article-cover" id="artCoverImg" style="display:none;width:100%%;height:260px;background-size:cover;background-position:center;border-radius:var(--r);margin-bottom:28px"></div>
+<div class="article-header">' +
+    '<span class="article-cat ' + article.cc + '">' + article.tag + '</span>' +
+    '<h1 class="article-title">' + article.title + '</h1>' +
+    '<div class="article-date">🕐 ' + article.date + ' · ' + article.rt + '</div>' +
+    '</div>' +
+    '<div class="article-content">' + (article.content || article.excerpt).replace(/\\n/g, '<br>') + '</div>' +
+    '<a href="posts.html" class="back-link"><svg class="ico"><use href="#ico-arrow"/></svg> 回到文章列表</a> <button class="share-btn" onclick="copyArticleLink()" style="margin-left:16px"><svg class="ico"><use href="#ico-link"/></svg>複製連結</button>';
+})();
+window.addEventListener("scroll", function() {
+  var scrollTop = window.scrollY || document.documentElement.scrollTop;
+  var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var pct = docHeight > 0 ? Math.min(100, Math.round(scrollTop / docHeight * 100)) : 0;
+  document.getElementById("readProgress").style.width = pct + "%";
+});
+window.copyArticleLink = function() {
+  var url = window.location.href;
+  if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function() { showToast(); }); }
+  else {
+    var ta = document.createElement("textarea"); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); showToast();
+  }
+}
+window.showToast = function() { var t = document.getElementById("shareToast"); t.classList.add("show"); setTimeout(function() { t.classList.remove("show"); }, 2000); }
+
+</script>
+<div class="share-toast" id="shareToast">🔗 連結已複製！</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:"smooth"})" title="回到頂部"><svg class="ico"><use href="#ico-arrow" style="transform:rotate(-90deg)"/></svg></button>
+</body>
+</html>

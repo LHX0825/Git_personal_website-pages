@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文章 · 星塵小站</title>
+<title>文章 · 薛定谔的博客</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,11 +47,11 @@
 <nav class="nav">
   <a href="index.html" class="nav-logo" style="text-decoration:none"><svg class="ico"><use href="#ico-star"/></svg>STARDUST</a>
   <div class="nav-links">
-    <a href="index.html" data-page="home"><svg class="ico"><use href="#ico-home"/></svg>首頁</a>
+    <a href="index.html" data-page="home"><svg class="ico"><use href="#ico-home"/></svg>首页</a>
     <a href="posts.html" data-page="posts"><svg class="ico"><use href="#ico-article"/></svg>文章</a>
-    <a href="chatters.html" data-page="chatters"><svg class="ico"><use href="#ico-chat"/></svg>說說</a>
-    <a href="friends.html" data-page="friends"><svg class="ico"><use href="#ico-people"/></svg>友鏈</a>
-    <a href="about.html" data-page="about"><svg class="ico"><use href="#ico-person"/></svg>關於</a>
+    <a href="chatters.html" data-page="chatters"><svg class="ico"><use href="#ico-chat"/></svg>说说</a>
+    <a href="friends.html" data-page="friends"><svg class="ico"><use href="#ico-people"/></svg>友情链接</a>
+    <a href="about.html" data-page="about"><svg class="ico"><use href="#ico-person"/></svg>关于作者</a>
     <button class="theme-btn" id="themeBtn" title="主題切換"><svg class="ico"><use href="#ico-moon"/></svg></button>
   </div>
 </nav>
@@ -63,24 +63,24 @@
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center" id="tagFilter">
   <button class="tag-btn sel" data-tag="all"><svg class="ico"><use href="#ico-star"/></svg>全部</button>
   <button class="tag-btn" data-tag="tech"><svg class="ico"><use href="#ico-code"/></svg>技術</button>
-  <button class="tag-btn" data-tag="life"><svg class="ico"><use href="#ico-heart"/></svg>生活</button>
+  <button class="tag-btn" data-tag="life"><svg class="ico"><use href="#ico-heart"/></svg>作者的贫困生活</button>
   <button class="tag-btn" data-tag="anime"><svg class="ico"><use href="#ico-film"/></svg>動漫</button>
   <button class="tag-btn" data-tag="design"><svg class="ico"><use href="#ico-palette"/></svg>設計</button>
   <button class="tag-btn" data-tag="thought"><svg class="ico"><use href="#ico-think"/></svg>隨筆</button>
   <button class="tag-btn" data-tag="travel"><svg class="ico"><use href="#ico-flight"/></svg>旅行</button>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-bottom:32px" id="postsGrid"></div>
-<footer class="footer"><p>Made with <span class="heart">💜</span> · 星塵小站 © 2024</p></footer>
+<footer class="footer"><p>Made with <span class="heart">💜</span> · 薛定谔的博客 © 2026</p></footer>
 </div>
 
 </div>
 <!-- Article modal -->
 <div class="article-modal-overlay" id="articleModal">
 <div class="article-modal">
-<h2><svg class="ico"><use href="#ico-send"/></svg>發表文章</h2>
-<label>標題</label>
-<input type="text" id="artTitle" placeholder="輸入文章標題..." maxlength="100">
-<label>分類</label>
+<h2><svg class="ico"><use href="#ico-send"/></svg>发表文章</h2>
+<label>标题</label>
+<input type="text" id="artTitle" placeholder="麻溜的输入标题..." maxlength="100">
+<label>分类</label>
 <select id="artCat">
 <option value="tech">💻 技術</option>
 <option value="life">🌈 生活</option>
@@ -120,7 +120,7 @@ function saveArticles() {
   try { localStorage.setItem("ff_articles", JSON.stringify(userPosts)); } 
   catch(e) { 
     if (e.name === "QuotaExceededError" || e.code === 22) {
-      alert("儲存空間不足！請使用較小的封面圖片或刪除一些文章。");
+      alert("bor发的图片太大了·请使用较小的封面图片或刪除一些文章。");
     }
   } 
 }
@@ -142,7 +142,7 @@ var coverDataUrl = "";
 window.handleCoverUpload = function(input) {
   var file = input.files[0];
   if (!file) return;
-  if (file.size > 3 * 1024 * 1024) { alert("圖片不能超過 3MB"); return; }
+  if (file.size > 3 * 1024 * 1024) { alert("图片不能超过 3MB"); return; }
   var preview = document.getElementById("coverPreview");
   var previewImg = document.getElementById("coverPreviewImg");
   preview.style.display = "block";
@@ -165,7 +165,7 @@ window.handleCoverUpload = function(input) {
       coverDataUrl = canvas.toDataURL("image/jpeg", 0.7);
       previewImg.src = coverDataUrl;
       previewImg.style.opacity = "1";
-      document.getElementById("artCover").value = "[已上傳]";
+      document.getElementById("artCover").value = "[已上传]";
       canvas.width = canvas.height = 0;
     };
     img.src = e.target.result;
@@ -232,7 +232,7 @@ function render() {
 </script>
 
 <!-- Music Player -->
-<button class="music-toggle" id="musicToggle" title="音樂播放器" onclick="toggleMusic()"><svg class="ico" style="width:1.3em;height:1.3em"><use href="#ico-music"/></svg></button>
+<button class="music-toggle" id="musicToggle" title="音乐播放器" onclick="toggleMusic()"><svg class="ico" style="width:1.3em;height:1.3em"><use href="#ico-music"/></svg></button>
 <div class="music-panel" id="musicPanel">
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="https://music.163.com/outchain/player?type=2&id=1930226368&auto=0&height=66" id="musicIframe"></iframe>
 </div>

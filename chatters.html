@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>說說 · 星塵小站</title>
+<title>說說 · 薛定谔的博客</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,9 +47,9 @@
   <div class="nav-links">
     <a href="index.html" data-page="home"><svg class="ico"><use href="#ico-home"/></svg>首頁</a>
     <a href="posts.html" data-page="posts"><svg class="ico"><use href="#ico-article"/></svg>文章</a>
-    <a href="chatters.html" data-page="chatters"><svg class="ico"><use href="#ico-chat"/></svg>說說</a>
-    <a href="friends.html" data-page="friends"><svg class="ico"><use href="#ico-people"/></svg>友鏈</a>
-    <a href="about.html" data-page="about"><svg class="ico"><use href="#ico-person"/></svg>關於</a>
+    <a href="chatters.html" data-page="chatters"><svg class="ico"><use href="#ico-chat"/></svg>说说</a>
+    <a href="friends.html" data-page="friends"><svg class="ico"><use href="#ico-people"/></svg>友情链接</a>
+    <a href="about.html" data-page="about"><svg class="ico"><use href="#ico-person"/></svg>关于作者</a>
     <button class="theme-btn" id="themeBtn" title="主題切換"><svg class="ico"><use href="#ico-moon"/></svg></button>
   </div>
 </nav>
@@ -73,10 +73,10 @@
   <textarea id="chatterInput" placeholder='分享此刻的想法...' maxlength="200"></textarea>
   <div class="pub-row">
     <div class="pub-cats" id="pubCats">
-      <button class="pub-cat sel" data-tag="\ud83d\udcac"><svg class="ico"><use href="#ico-chat"/></svg>日常</button>
-      <button class="pub-cat" data-tag="\ud83d\udcbb"><svg class="ico"><use href="#ico-code"/></svg>技術</button>
-      <button class="pub-cat" data-tag="\ud83c\udfac"><svg class="ico"><use href="#ico-film"/></svg>動漫</button>
-      <button class="pub-cat" data-tag="\ud83c\udfb5"><svg class="ico"><use href="#ico-music"/></svg>音樂</button>
+      <button class="pub-cat sel" data-tag="\ud83d\udcac"><svg class="ico"><use href="#ico-chat"/></svg>作者日常</button>
+      <button class="pub-cat" data-tag="\ud83d\udcbb"><svg class="ico"><use href="#ico-code"/></svg>相关技術</button>
+      <button class="pub-cat" data-tag="\ud83c\udfac"><svg class="ico"><use href="#ico-film"/></svg>作者不爱看動漫</button>
+      <button class="pub-cat" data-tag="\ud83c\udfb5"><svg class="ico"><use href="#ico-music"/></svg>作者爱听的音樂</button>
       <button class="pub-cat" data-tag="\ud83d\udcd6"><svg class="ico"><use href="#ico-book"/></svg>閱讀</button>
       <button class="pub-cat" data-tag="\ud83c\udf5c"><svg class="ico"><use href="#ico-eat"/></svg>美食</button>
       <button class="pub-cat" data-tag="\u2708\ufe0f"><svg class="ico"><use href="#ico-flight"/></svg>旅行</button>
@@ -86,14 +86,14 @@
   </div>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;max-width:700px;margin:0 auto 40px" id="chattersList"></div>
-<footer class="footer"><p>Made with <span class="heart">💜</span> · 星塵小站 © 2024</p></footer>
+<footer class="footer"><p>Made with <span class="heart">💜</span> · 薛定谔的博客 © 2026</p></footer>
 </div>
 <script src="app.js"></script>
 <script>
 (function() {
   var stored = localStorage.getItem("ff_chats");
   var chatters = stored ? JSON.parse(stored) : [
-    { name:'星塵', av:'\ud83c\udf0c', text:'優化了部落格的回應式佈局，手機端體驗大幅提升 \u2728', tag:'\ud83d\udcbb', time:'2 天前' },
+    { name:'星塵', av:'\ud83c\udf0c', text:'欢迎嘉豪来攻击我的网站_本网站IP:127.0.0.1_作者邮箱:anything@example.com \u2728', tag:'\ud83d\udcbb', time:'最近' },
     { name:'星塵', av:'\ud83c\udfb8', text:'新番《椎名林檎》意外好看，作畫和配樂絕了', tag:'\ud83c\udfac', time:'5 天前' },
     { name:'星塵', av:'\ud83d\udcbb', text:'GitHub Actions 自動化部署踩坑，折騰了一下午', tag:'\ud83d\udcbb', time:'1 週前' },
     { name:'星塵', av:'\ud83d\udda5', text:'換了新顯示器，4K 144Hz，寫代碼像在看藝術品 \ud83d\ude2d', tag:'\ud83d\udcbb', time:'2 週前' },
@@ -140,7 +140,7 @@
     btn.addEventListener("click", function() {
       var text = input.value.trim(); 
       if (!text) return;
-      chatters.unshift({ name:'星塵', av:pubTag, text:text, tag:pubTag, time:'剛剛' });
+      chatters.unshift({ name:'薛定谔', av:pubTag, text:text, tag:pubTag, time:'剛剛' });
       input.value = ""; 
       count.textContent = "0/200"; 
       btn.disabled = true;

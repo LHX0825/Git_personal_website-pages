@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文章 · 星塵小站</title>
+<title>文章 · 薛定谔的博客</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,16 +55,16 @@
 <nav class="nav">
   <a href="index.html" class="nav-logo" style="text-decoration:none"><svg class="ico"><use href="#ico-star"/></svg>STARDUST</a>
   <div class="nav-links">
-    <a href="index.html"><svg class="ico"><use href="#ico-home"/></svg>首頁</a>
+    <a href="index.html"><svg class="ico"><use href="#ico-home"/></svg>首页</a>
     <a href="posts.html" class="active"><svg class="ico"><use href="#ico-article"/></svg>文章</a>
-    <a href="chatters.html"><svg class="ico"><use href="#ico-chat"/></svg>說說</a>
-    <a href="friends.html"><svg class="ico"><use href="#ico-people"/></svg>友鏈</a>
-    <a href="about.html"><svg class="ico"><use href="#ico-person"/></svg>關於</a>
+    <a href="chatters.html"><svg class="ico"><use href="#ico-chat"/></svg>说说</a>
+    <a href="friends.html"><svg class="ico"><use href="#ico-people"/></svg>友情链接</a>
+    <a href="about.html"><svg class="ico"><use href="#ico-person"/></svg>关于作者</a>
     <button class="theme-btn" id="themeBtn" title="主題切換"><svg class="ico"><use href="#ico-moon"/></svg></button>
   </div>
 </nav>
 <div class="article-page" id="articlePage"></div>
-<footer class="footer"><p>Made with <span class="heart">💜</span> · 星塵小站 © 2024</p></footer>
+<footer class="footer"><p>Made with <span class="heart">💜</span> · 薛定谔的博客 © 2026</p></footer>
 </div>
 <button class="music-toggle" id="musicToggle" title="音樂播放器" onclick="toggleMusic()"><svg class="ico" style="width:1.3em;height:1.3em"><use href="#ico-music"/></svg></button>
 <div class="music-panel" id="musicPanel">
@@ -96,7 +96,7 @@
     return;
   }
   
-  document.title = article.title + " · 星塵小站";
+  document.title = article.title + " · 薛定谔的博客";
   if (article.cover) { document.getElementById('artCoverImg').style.display = 'block'; document.getElementById('artCoverImg').style.backgroundImage = 'url(' + article.cover + ')'; }
   container.innerHTML = 
     '<div class="article-cover" id="artCoverImg" style="display:none;width:100%%;height:260px;background-size:cover;background-position:center;border-radius:var(--r);margin-bottom:28px"></div>
